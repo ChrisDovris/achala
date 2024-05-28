@@ -1,0 +1,42 @@
+
+
+.banner-container {
+    p {
+        text-align: center;
+       font-weight: 500;
+       font-size: 1.5rem;
+       letter-spacing: 0.3rem;
+    }
+    width: 90%;
+    margin: auto;
+    img {
+        object-fit:contain;
+        width: 13rem;
+        height: 10rem;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .type {
+            font-size: 1.3rem;
+        }
+        .attributes {
+            font-size: 0.9rem;
+        }
+        .price {
+            font-size: 0.8rem;
+        }
+
+    }
+}
+
+::ng-deep {
+    .p-carousel .p-carousel-indicators {
+        display: none;
+    }
+    .p-carousel-container  {
+        padding-bottom: 2rem;
+    }
+}

@@ -1,0 +1,78 @@
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 2rem;
+    .checkbox {
+        margin-top: 6rem;
+        width: 15%;
+        // left: 2rem;
+        top: 6rem
+    }
+    .products {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+        width: 85%;
+    }
+
+    .product {
+        width: 25%;
+    }
+}
+
+
+::ng-deep {
+    .p-fieldset {
+        border: none;
+    }
+    .p-fieldset-content {
+        padding: 1rem;
+    }
+    .p-fieldset-toggleable {
+        padding: 0;
+    }
+    .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a {
+        padding: 0.4rem;
+        background-color: white;
+    }
+
+    .p-fieldset-legend {
+        border: none;
+       font-size: 0.8rem;
+       font-weight: 500;
+    }
+
+    .p-checkbox-label {
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .p-checkbox-label-focus {
+        border: none;
+        transition: none;
+    }
+    .p-checkbox:hover {
+        transition: none;
+    }
+     .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+        box-shadow: none;
+      }
+    
+      .p-checkbox .p-checkbox-box {
+        width: 1rem;
+        height: 1rem;
+      }
+      .p-checkbox .p-checkbox-box {
+    border: 2px solid rgb(71, 71, 71);
+    color: #495057;
+    border-radius: 3px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    outline-color: transparent;
+}
+
+
+   
+}

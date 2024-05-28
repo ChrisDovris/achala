@@ -1,0 +1,129 @@
+header {
+    height: 3rem;
+    background-color: #40916c;
+    display: flex;
+    .logo {
+        width: 25%;
+        a {
+            display: flex;
+        }
+    }
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+    .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 25%;
+        .searchBar {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            input {
+            width: 90%;
+            background-color: white;
+            border: 1px solid #d8f3dc;
+            border-radius: 0.4rem;
+            text-indent: 4px;
+            }
+            :focus{
+                outline: none;
+                box-shadow: inset 0 0 0 1px white;
+                font-weight: 10rem;
+            }
+            span{
+                display: flex;
+                justify-content: center;
+                margin: 0.2rem;
+                width: 15%;   
+            }
+        }
+        .account {
+            margin: 0.2rem;
+            width: 10%;
+        }
+        .cart {
+            margin:0.2rem 0.1rem;
+            width: 10%;
+        }
+    }
+        .pi {
+            color: #d8f3dc;
+        }
+        .pi:hover {
+            color: white;
+        }
+
+}
+
+
+::ng-deep {
+    // .p-megamenu-root-list>.p-menuitem-active>.p-megamenu-panel {
+    //     display: none;
+    //   }
+   
+    .p-megamenu .p-submenu-header{
+        display: none;
+    }
+    .p-megamenu-horizontal {
+        display: flex;
+        justify-content: space-between;
+    }
+    .p-megamenu {
+        height: 100%;
+        margin: 0;
+        border: none;
+        padding: 0;
+        background-color: #40916c;
+
+    }
+   
+
+    .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link {
+        background-color: #40916c;
+    }
+    .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link:hover {
+        color: white;
+
+    }
+    
+    .p-megamenu .p-menuitem > .p-menuitem-content .p-menuitem-link:hover {
+        background-color:#6ec49b ;
+    }
+    
+    .p-megamenu-submenu {
+        background-color: #52b788;
+    }
+    
+
+    .p-megamenu .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+        color: #d8f3dc;
+    }
+    .p-megamenu .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text:hover {
+        color: white;
+    }
+    .p-megamenu.p-megamenu-horizontal .p-megamenu-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-submenu-icon {
+        color: #d8f3dc;
+    }
+
+    .p-megamenu-col-12 {
+        padding: 0;
+    }
+    
+     .p-submenu {
+        display: none;
+      }
+      
+     .p-menuitem.expanded .p-submenu {
+        display: block;
+      }
+     
+}
+
+
+
+

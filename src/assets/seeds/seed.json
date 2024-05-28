@@ -1,0 +1,205 @@
+{
+    "products": [  
+        {
+        "id": 1,
+        "generalType": "body",
+        "type": "deodorant",
+        "attributes": ["anti-aging"],
+        "price": 20,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,3.2,5,1.2],
+        "salesCount": 100
+    },
+    {
+        "id": 2,
+        "generalType": "body",
+        "type": "body-oil",
+        "attributes": ["babes"],
+        "price": 40,
+        "imagePath": "assets/test.webp",
+        "rating" : [4.1,5,3.2,3.2],
+        "salesCount": 120
+    },
+    {
+        "id": 3,
+        "generalType": "body",
+        "type": "deodorant",
+        "attributes": ["anti-aging"],
+        "price": 10,
+       "imagePath": "assets/test.webp",
+       "rating" : [4,3.4,5,5,1],
+       "salesCount": 130
+    },
+    {
+        "id": 4,
+        "generalType": "skincare",
+        "type": "hair",
+        "attributes": ["anti-aging"],
+        "price": 12.5,
+        "imagePath": "assets/test.webp",
+        "salesCount": 20
+    },
+    {
+        "id": 5,
+        "generalType": "skincare",
+        "type": "lips",
+        "attributes": ["woman"],
+        "price": 16,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,3.5,2],
+        "salesCount": 131
+    },
+    {
+        "id": 6,
+        "generalType": "skincare",
+        "type": "cleansers",
+        "attributes": ["acne"],
+        "price": 32,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,5,3.2,2,1],
+        "salesCount": 200
+    },
+    {
+        "id": 7,
+        "generalType": "skincare",
+        "type": "night-creams",
+        "attributes": ["anti-aging", "woman"],
+        "price": 47,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,1],
+        "salesCount": 110
+    },
+    {
+        "id": 8,
+        "generalType": "skincare",
+        "type": "day-creams",
+        "attributes": ["anti-aging"],
+        "price": 300,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,5,5],
+        "salesCount": 50
+    },
+    {
+        "id": 9,
+        "generalType": "skincare",
+        "type": "night-creams",
+        "attributes": ["babes"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4],
+        "salesCount": 10
+    },  
+     {
+        "id": 10,
+        "generalType": "skincare",
+        "type": "night-creams",
+        "attributes": ["babes"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },  
+     {
+        "id": 11,
+        "generalType": "skincare",
+        "type": "night-creams",
+        "attributes": ["anti-aging", "refreshing"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },
+    {
+        "id": 12,
+        "generalType": "wellness",
+        "type": "essential-oils",
+        "attributes": ["refreshing"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },
+    {
+        "id": 13,
+        "generalType": "wellness",
+        "type": "essential-oils",
+        "attributes": ["mature"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },
+    {
+        "id": 14,
+        "generalType": "wellness",
+        "type": "essential-creams",
+        "attributes": ["mature", "anti-aging"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },
+    {
+        "id": 15,
+        "generalType": "wellness",
+        "type": "essential-creams",
+        "attributes": ["anti-aging", "mature","woman"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },
+    {
+        "id": 16,
+        "generalType": "wellness",
+        "type": "essential-creams",
+        "attributes": ["anti-aging","refreshing"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 300
+    },
+    {
+        "id": 17,
+        "generalType": "skincare",
+        "type": "lips",
+        "attributes": ["babes"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 140
+    },
+    {
+        "id": 18,
+        "generalType": "skincare",
+        "type": "hair",
+        "attributes": ["anti-aging"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 180
+    },
+    {
+        "id": 19,
+        "generalType": "body",
+        "type": "body-oils",
+        "attributes": ["babes"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 100
+    },
+    {
+        "id": 20,
+        "generalType": "body",
+        "type": "deodorant",
+        "attributes": ["refreshing", "mature"],
+        "price": 12,
+        "imagePath": "assets/test.webp",
+        "rating" : [4,3,5,4,2],
+        "salesCount": 200
+    }
+    
+]
+
+}

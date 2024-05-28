@@ -1,0 +1,26 @@
+<!-- <div class="">
+    <app-show-item></app-show-item>
+</div> -->
+
+
+
+<div class="banner-container">
+    <p>{{title | uppercase }}</p>
+    <ng-container *ngIf="data | async as product">
+        <p-carousel 
+        [numVisible]="4" 
+        [numScroll]="1" 
+        [circular]="false"
+        [value]="product"
+         >
+            <ng-template let-product pTemplate="item">
+                <app-show-item [product]="product"></app-show-item>
+            </ng-template>
+        </p-carousel>
+    </ng-container>
+</div>
+    
+
+
+    
+

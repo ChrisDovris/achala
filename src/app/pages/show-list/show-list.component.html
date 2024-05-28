@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="checkbox">
+        <p-fieldset legend="PRODUCTS" [toggleable]="true">
+            <div *ngFor="let category of ProductCategories" class="field-checkbox">
+                <p-checkbox 
+                    [label]="category.name" 
+                    name="group" 
+                    [value]="category.trueValue" 
+                    [(ngModel)]="checkedValues"
+                    (onChange)="onCheckValues($event, category)"
+                    > 
+                    {{category.label}}
+                </p-checkbox>
+            </div>
+        </p-fieldset>
+        <p-fieldset legend="TYPE" [toggleable]="true">
+            <div *ngFor="let category of TypeCategories" class="field-checkbox">
+                <p-checkbox 
+                    [label]="category.name" 
+                    name="group" 
+                    [value]="category.trueValue" 
+                    [(ngModel)]="checkedAttritubesValues"
+                    (onChange)="onCheckValues($event, category)"
+                    [disabled]="category.disabled"
+                    >
+                </p-checkbox>
+            </div>
+        </p-fieldset>
+    </div>
+
+<div class="products">
+    <ng-container *ngIf="showList$ | async as showList">
+        <div class="product" *ngFor="let product of showList">
+            <app-show-item 
+            [product]="product" 
+            [generalType]="generalType"
+            [type]="type">
+        </app-show-item>
+        </div>
+    </ng-container>
+</div>
+
+</div>

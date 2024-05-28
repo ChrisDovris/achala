@@ -1,0 +1,11 @@
+
+<div class="product" *ngIf="product">
+    <img [src]="product.imagePath" alt="">
+    <div class="type">{{product.type | uppercase}}</div>
+    <div class="attributes"> 
+        <div *ngFor="let attribute of product.attributes">
+            {{attribute | uppercase}}
+        </div>
+    </div>
+    <div class="price">{{product.price}} €</div>
+</div>

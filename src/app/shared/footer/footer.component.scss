@@ -1,0 +1,39 @@
+footer, a {
+  background-color: #40916c;
+  color: #d8f3dc;
+  text-decoration: none;
+}
+.about-section {
+  margin-left: 0.5rem;
+  padding-top: 1rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  .p {
+    font-weight: bold;
+  }
+  .about, .customer-service, .company, .follow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  a {
+    margin:0.5rem 0;
+  }
+  a:hover {
+    color:white;
+    text-decoration: none;
+  }
+
+}
+.rights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  font-size: 0.9rem;
+
+}
+
