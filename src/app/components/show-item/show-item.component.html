@@ -1,5 +1,6 @@
 
-<div class="product" *ngIf="product">
+<a class="product" *ngIf="product">
+    <a [routerLink]="'/show-detail/' + product.id">
     <img [src]="product.imagePath" alt="">
     <div class="type">{{product.type | uppercase}}</div>
     <div class="attributes"> 
@@ -8,4 +9,4 @@
         </div>
     </div>
     <div class="price">{{product.price}} €</div>
-</div>
+</a>

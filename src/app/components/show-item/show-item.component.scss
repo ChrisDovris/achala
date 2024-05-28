@@ -1,7 +1,12 @@
-.product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    
+    a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .type {
         font-size: 1.3rem;
     }
@@ -16,5 +21,19 @@
         width: 12rem;
         height: 15rem;
     }
+      a:link {
+        text-decoration: none;
+      }
+      
+      a:visited {
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: none;
+      }
+      
+      a:active {
+        text-decoration: none;
+      }
 
-}
