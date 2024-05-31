@@ -1,1 +1,27 @@
-<p>show-detail works!</p>
+<ng-container *ngIf="showProduct$ | async as product">
+    <div class="container">
+    <div class="image">
+        <p-image 
+        imageClass="image"
+    [src]="product.imagePath" 
+    alt="Image"
+    [preview]="true" />
+    </div>
+    <div class="details">
+        <div class="">
+            {{product.title}}
+        </div>
+        <div class="">
+            {{product.price}} €
+        </div>
+            {{product.type}}
+            {{product.generalType}}
+            <div class="" *ngFor="let attribute of product.attributes">
+                {{attribute}}
+            </div>
+              
+        
+    </div>
+</div>
+</ng-container>
+

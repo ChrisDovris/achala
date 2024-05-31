@@ -9,8 +9,6 @@ import { Observable, map } from 'rxjs';
 export class ProductsService {
 
   constructor(private http: HttpClient) { }
-  private data : Product[] = [] 
-  private MostRated : Product[] = [];
 
   getProducts() {
     return this.http.get<Data>(
@@ -18,6 +16,8 @@ export class ProductsService {
     ).pipe(map(data => data.products)
     );
 }
+
+
 
 getMostRatedProducts(numProducts: number) {
   return this.http.get<Data>(
@@ -69,23 +69,23 @@ getProductByAttributes( attritubes: string[]): Observable<Product[]> {
   );
 }
 
-// getAttributesOfProducts(type:string ) {
-//   return this.http.get<Data>(
-//     'assets/seeds/seed.json'
-//   ).pipe(
-//     map(data => data.products),
-//     map(products => products.filter(products => products.attributes === ))
-//   ) 
 
-// }
-
-
+getProductById(id: number): Observable<Product | null> {
+  return this.http.get<{ products: Product[] }>(
+    'assets/seeds/seed.json'
+  ).pipe(
+    map(response => {
+      const products = response.products;
+      if (Array.isArray(products)) {
+        const product = products.find(p => p.id === id);
+        return product ? product : null;
+      } else {
+        return null;
+      }
+    })
+  );
 }
 
 
 
-
-
-
-
-
+}

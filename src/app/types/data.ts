@@ -4,8 +4,10 @@ export type Data = {
 
 export type Product = {
     id: number,
+    title: string,
     generalType: string,
     type: string,
+    discription: string,
     attributes: string[],
     price: number,
     imagePath: string,

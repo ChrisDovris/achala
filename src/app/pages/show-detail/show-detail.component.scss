@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    margin: auto;
+    .image {
+       width: 70%;
+       margin: auto;
+    }
+    .details{
+        width: 30%;
+        margin: auto;
+    }
+}
+
+::ng-deep {
+    // .p-image-preview-container {
+    //     width: 10px;
+    //     height: 10px;
+    // }
+    .p-image .p-component .p-image-preview-container{
+        width: 100px;
+        height: 100px;
+    }
+
+    .image {
+        width: 100%;
+    }
+}

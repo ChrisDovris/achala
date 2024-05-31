@@ -7,6 +7,5 @@ export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'show-list/:generalType', component: ShowListComponent},
     {path: 'show-list/:generalType/:type', component: ShowListComponent},
-    {path: 'show-detail/:id', component: ShowDetailComponent}
-
+    {path: 'show-detail/:id', component: ShowDetailComponent }
 ];
