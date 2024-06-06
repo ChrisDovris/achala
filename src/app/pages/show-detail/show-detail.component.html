@@ -1,27 +1,36 @@
 <ng-container *ngIf="showProduct$ | async as product">
     <div class="container">
-    <div class="image">
-        <p-image 
-        imageClass="image"
-    [src]="product.imagePath" 
-    alt="Image"
-    [preview]="true" />
-    </div>
-    <div class="details">
-        <div class="">
+        <div class="image">
+            <p-image 
+            imageClass="image"
+            [src]="product.imagePath" 
+            alt="Image"
+            [preview]="true" />
+        </div>
+        <div class="details">
+            <div class="title">
             {{product.title}}
-        </div>
-        <div class="">
-            {{product.price}} €
-        </div>
-            {{product.type}}
-            {{product.generalType}}
+            </div>
+            <div class="price">
+                {{product.price}} €
+            </div>
+            <div *ngIf="averageRating">
+            <p-rating [(ngModel)]="averageRating" [readonly]="true" [cancel]="false" />  Reviews
+            </div>
+            <div class="button">
+            <button >
+                ADD TO CART
+            </button>
+            </div>
+            
+               <div class="types">
+                {{product.type}}
+                {{product.generalType}}
+               </div>
             <div class="" *ngFor="let attribute of product.attributes">
                 {{attribute}}
             </div>
-              
-        
+        </div>
     </div>
-</div>
 </ng-container>
 

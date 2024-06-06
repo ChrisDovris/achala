@@ -6,12 +6,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TooltipModule } from 'primeng/tooltip';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, HeaderComponent,HomeComponent, HttpClientModule, CheckboxModule, TooltipModule],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent,HomeComponent, HttpClientModule, CheckboxModule, TooltipModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
