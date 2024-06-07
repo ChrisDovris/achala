@@ -7,12 +7,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
-
+import { InputNumberModule } from 'primeng/inputnumber';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @Component({
   selector: 'app-show-detail',
   standalone: true,
-  imports: [CommonModule,ImageModule, RatingModule, FormsModule ],
+  imports: [CommonModule,ImageModule, RatingModule, FormsModule, InputNumberModule, FieldsetModule ],
   templateUrl: './show-detail.component.html',
   styleUrl: './show-detail.component.scss'
 })
@@ -26,6 +27,7 @@ showProduct$ : Observable<Product | null> | null = null;
 productId: number = 0;
 
 averageRating: number = 0;
+value1 = 1;
   
 
 ngOnInit(): void {

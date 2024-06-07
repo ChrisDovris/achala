@@ -3,11 +3,11 @@
     margin: auto;
     width: 80%;
     .image {
-       width: 70%;
+       width: 65%;
        margin: auto;
     }
     .details{
-        width: 30%;
+        width: 35%;
         margin: auto;
         .title {
             font-size: 2rem;
@@ -18,12 +18,36 @@
             margin-bottom: 1rem;
             font-size: 1.6rem;
         }
-        button {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            height: 2rem;
-            width: 100%;
+        .averageRating  {
+            span {
+            font-size: 0.9rem;
+            color: gray
+            }
         }
+        .addCartButtons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding-top: 1rem;
+             button {
+            width: 70%;
+            background-color: white;
+            color:black;
+            border: 1px solid black;
+            font-size: 1rem;
+            font-weight: 600;
+             }
+            //  button:hover {
+            //     background-color: yellow;
+            //     transition: 1s;
+            //  }
+           
+    }
+
+    }
+    .moreDetails {
+        padding-top: 1.4rem;
     }
     
 }
@@ -33,5 +57,89 @@
     .image {
         width: 100%;
         margin: auto;
+    } 
+   
+
+    .p-input-number-horizontal {
+       width: 20%;
+    }
+    .p-button.p-button-secondary {
+        width: 2rem;
+    }
+
+    .p-inputtext {
+        width: 2rem;
+    }
+    .p-button {
+        // border-radius: 0;
+        background-color: white;
+        color: black;
+    }
+    .pi {
+        font-size: 0.7rem;
+    }
+    .p-rating {
+    gap: 0.2rem;
+    }
+    .p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+        color: black;
+    }
+    .p-rating .p-rating-item .p-rating-icon{
+        color:black;
+    
+    }
+    .p-inputtext{
+        border: none;
+        font-size: 0.9rem;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        // width: 0.8rem;s
+        padding: 5px;
+        text-align: center;
+    }
+    .p-inputnumber  
+    .p-inputnumber-input{ 
+    box-shadow: none;
+    }
+
+    .p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-down{
+        border-radius: 0;
+        border: none;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+
+    .p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    .p-fieldset {
+        border: none;
+        color: black;
+        border-bottom: 1px solid gray;
+
+    }
+    .p-fieldset-content {
+        padding: 1rem;
+    }
+    .p-fieldset-toggleable {
+        padding: 0;
+    }
+    .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a {
+        padding: 0.7rem;
+        padding-left: 0;
+        background-color: white;
+        color: black;
+        font-size: 1.1rem;
+    }
+
+    .p-fieldset-legend {
+        border: none;
+       font-size: 0.8rem;
+       font-weight: 500;
     }
 }

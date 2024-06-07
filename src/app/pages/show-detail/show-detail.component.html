@@ -2,6 +2,7 @@
     <div class="container">
         <div class="image">
             <p-image 
+            preview="true"
             imageClass="image"
             [src]="product.imagePath" 
             alt="Image"
@@ -11,25 +12,58 @@
             <div class="title">
             {{product.title}}
             </div>
-            <div class="price">
-                {{product.price}} €
-            </div>
-            <div *ngIf="averageRating">
-            <p-rating [(ngModel)]="averageRating" [readonly]="true" [cancel]="false" />  Reviews
-            </div>
-            <div class="button">
-            <button >
-                ADD TO CART
-            </button>
-            </div>
-            
-               <div class="types">
+            <div class="types">
                 {{product.type}}
                 {{product.generalType}}
-               </div>
+           </div>
             <div class="" *ngFor="let attribute of product.attributes">
                 {{attribute}}
             </div>
+            <div class="price">
+                {{product.price}} €
+            </div>
+            <div class="averageRating" *ngIf="averageRating">
+            <p-rating [(ngModel)]="averageRating" [readonly]="true" [cancel]="false" />  Reviews <span>({{product.rating?.length}}) </span>
+            </div>
+            <div class="addCartButtons">
+                <div class="quantity">
+                    <p-inputNumber 
+                        [(ngModel)]="value1" 
+                        [showButtons]="true"
+                        min=1
+                        max=10
+                        buttonLayout="horizontal" 
+                        spinnerMode="horizontal" 
+                        inputId="vertical"
+                        decrementButtonClass="p-button-secondary"
+                        incrementButtonClass="p-button-secondary" 
+                        incrementButtonIcon="pi pi-plus" 
+                        decrementButtonIcon="pi pi-minus" />
+                </div>
+                <button class="button" >
+                    ADD TO CART
+                </button>
+            </div>
+            <div class="moreDetails">
+            <p-fieldset legend="Details" [toggleable]="true" [collapsed]="true">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </p-fieldset>
+            <p-fieldset legend="How to use" [toggleable]="true" [collapsed]="true">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </p-fieldset>
+            <p-fieldset legend="Ingredients" [toggleable]="true" [collapsed]="true">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </p-fieldset>
+        </div>
         </div>
     </div>
 </ng-container>
