@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(128, 128, 128, 0.205);
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    .textContainer {
+        width: 70%;
+    }
+    .customerSupport, .availableProducts, .transportanion, .payment{
+        display: flex;
+    }
+    h1 {
+        font-size: 1.1rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    
+}
+
+::ng-deep {
+     .pi-credit-card, .pi-truck, .pi-check-circle, .pi-phone  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        font-size: 3rem;
+    }
+}

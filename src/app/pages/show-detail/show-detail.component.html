@@ -38,33 +38,43 @@
                         decrementButtonClass="p-button-secondary"
                         incrementButtonClass="p-button-secondary" 
                         incrementButtonIcon="pi pi-plus" 
-                        decrementButtonIcon="pi pi-minus" />
+                        decrementButtonIcon="pi pi-minus"
+                        maxlength=2
+                        />
                 </div>
                 <button class="button" >
                     ADD TO CART
                 </button>
             </div>
             <div class="moreDetails">
-            <p-fieldset legend="Details" [toggleable]="true" [collapsed]="true">
-                <p>
+                <p-fieldset legend="Details" [toggleable]="true" >
+                    <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </p-fieldset>
-            <p-fieldset legend="How to use" [toggleable]="true" [collapsed]="true">
-                <p>
+                    </p>
+                </p-fieldset>
+                <p-fieldset legend="How to use" [toggleable]="true" [collapsed]="true">
+                    <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </p-fieldset>
-            <p-fieldset legend="Ingredients" [toggleable]="true" [collapsed]="true">
-                <p>
+                    </p>
+                </p-fieldset>
+                <p-fieldset legend="Ingredients" [toggleable]="true" [collapsed]="true">
+                    <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </p-fieldset>
+                    </p>
+                </p-fieldset>
+            </div>
         </div>
+    <hr/>
+        <div class="productsBanner">
+            <app-banner 
+                [title]="'You may also like'"
+                [data]="topRated"
+            ></app-banner>
         </div>
     </div>
+    <app-support-banner></app-support-banner>
 </ng-container>
 

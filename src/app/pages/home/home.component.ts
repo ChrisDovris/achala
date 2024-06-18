@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { ProductsService } from '../../services/products.service';
 import { JsonPipe } from '@angular/common';
+import { SupportBannerComponent } from '../../components/support-banner/support-banner.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [BannerComponent,JsonPipe],
+  imports: [BannerComponent,JsonPipe,SupportBannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
