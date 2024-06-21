@@ -16,7 +16,64 @@
             <span class="pi pi-user"></span>
         </div>
         <div class="cart">
-            <span class="pi pi-shopping-bag"></span>
+            <span 
+                class="pi pi-shopping-bag" 
+                (click)="sidebarVisible = true" 
+                pBadge [value]=productsInCart.length></span>
+            <p-sidebar [(visible)]="sidebarVisible" position="right" (click)="onDisplayProductsCart()">
+                <h2>Cart</h2>
+                <hr>
+                <div class="sidebarContainer">
+                    <ng-container *ngIf="!productsInCart.length"> 
+                        <div class="noProductOnCart">
+                            <i class="pi pi-cart-minus"></i>
+                            <span>Your cart is currenty empty</span>
+                        </div>
+                    </ng-container>
+                    <div class="productOnCart"  *ngFor="let product of productsInCart">
+                        <img [src]="product.imagePath" alt="">
+                        <div class="details">
+                            <div class="name">
+                                {{product.generalType}}
+                                {{product.type}}
+                            </div>
+                            <div class="price">
+                                {{product.price}} €
+                            </div>
+                            <div class="quantity">
+                                <p-inputNumber 
+                                [(ngModel)]="product.quantity" 
+                                [showButtons]="true"
+                                min=1
+                                max=10
+                                buttonLayout="horizontal" 
+                                spinnerMode="horizontal" 
+                                inputId="vertical"
+                                decrementButtonClass="p-button-secondary"
+                                incrementButtonClass="p-button-secondary" 
+                                incrementButtonIcon="pi pi-plus" 
+                                decrementButtonIcon="pi pi-minus"
+                                maxlength=2
+                                />
+                            </div>
+                            <div class="clearProduct">
+                                <span class="pi pi-trash" (click)="onRemoveProduct(product)"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomContainer">
+                        <ng-container *ngIf="productsInCart.length">
+                            <span >
+                                CHECKOUT 
+                            </span>
+                            <input type="text" [ngModel]="totalCartPrice">
+                            <button (click)="onDeleteCart()">
+                                Clear Cart
+                            </button>
+                        </ng-container>
+                    </div>
+                </div>  
+            </p-sidebar>
         </div>
     </div>
 </header>

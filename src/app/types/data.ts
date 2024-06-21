@@ -13,5 +13,6 @@ export type Product = {
     imagePath: string,
     rating?: number[],
     salesCount?: number,
-    averageRating: number
+    averageRating: number,
+    quantity?: number
 }

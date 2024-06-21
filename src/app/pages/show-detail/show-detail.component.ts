@@ -11,6 +11,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { FieldsetModule } from 'primeng/fieldset';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { SupportBannerComponent } from '../../components/support-banner/support-banner.component';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-show-detail',
@@ -22,16 +23,17 @@ import { SupportBannerComponent } from '../../components/support-banner/support-
 export class ShowDetailComponent implements OnInit{
 
   constructor(private route : ActivatedRoute,
-              private productsService : ProductsService
+              private productsService : ProductsService,
+              private localStorageService : LocalStorageService
   ) {}
 
 showProduct$ : Observable<Product | null> | null = null;
 productId: number = 0;
-topRated = this.productsService.getMostRatedProducts(5)
-
 averageRating: number = 0;
-value1 = 1;
-  
+quantityOfProduct = 1;
+productsCart: any[] = [];
+
+topRated = this.productsService.getMostRatedProducts(5)
 
 ngOnInit(): void {
   this.route.params.subscribe(params => {
@@ -51,6 +53,17 @@ ngOnInit(): void {
 calculateAverageRating(ratings: number[]): number {
   const sum = ratings.reduce((a, b) => a + b, 0);
   return sum / ratings.length;
+}
+
+
+//otan patas sto add to cart allaskei kai h timh sto proion
+addToCart(product: Product) { 
+  if(!this.localStorageService.productInCart(product)) {
+    product.quantity = this.quantityOfProduct;
+    product.price = this.quantityOfProduct * product.price;
+    this.localStorageService.addToCart(product);
+    this.productsCart = [...this.localStorageService.getCartProducts()]  
+  }
 }
 
 }

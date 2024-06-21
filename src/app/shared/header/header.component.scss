@@ -51,11 +51,40 @@ header {
             width: 10%;
         }
     }
-        .pi {
+        span.pi {
             color: #d8f3dc;
         }
-        .pi:hover {
+        span.pi:hover {
             color: white;
+        }
+
+        .sidebarContainer{
+            .noProductOnCart {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 7rem 0;
+            }
+            .productOnCart{
+                display: flex;
+                width: 100%;
+                min-height: 90%;
+                align-items: center;
+                img {
+                width: 30%;
+                }
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    width: 70%;
+                }
+            } 
+            .bottomContainer{
+                position: absolute;
+                bottom: 2rem;
+                display: flex;
+                flex-direction: column;
+            }
         }
 
 }
@@ -117,6 +146,21 @@ header {
       
      .p-menuitem.expanded .p-submenu {
         display: block;
+      }
+
+      .p-badge  {
+        min-width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: 0.6rem; 
+      }
+      .p-sidebar{
+        color: black;
+      }
+       .pi-cart-minus {
+        font-size: 4rem;
+        color: black;
+        padding-bottom: 2rem;
       }
      
 }

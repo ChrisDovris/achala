@@ -61,7 +61,7 @@
         width: 100%;
         margin: auto;
     } 
-    .pi {
+    .quantity .pi {
         font-size: 0.7rem;
     }
     .p-rating {
@@ -118,6 +118,7 @@
     }
     .p-image-preview-indicator {
         opacity: 0.04;
+
     }
 
     .p-fieldset {
@@ -146,3 +147,14 @@
        font-weight: 500;
     }
 }
+
+
+// @media screen and (min-width: 900px) {
+
+// screen for macbook
+// .addCartButtons{
+//         button {
+//             width: 70%;
+//         } 
+//     }
+// }
