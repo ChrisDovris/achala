@@ -46,6 +46,7 @@ ngOnInit(): void {
       this.averageRating = this.calculateAverageRating(product.rating)
     }
   })
+
 }
 
 
@@ -56,13 +57,12 @@ calculateAverageRating(ratings: number[]): number {
 }
 
 
-//otan patas sto add to cart allaskei kai h timh sto proion
 addToCart(product: Product) { 
   if(!this.localStorageService.productInCart(product)) {
     product.quantity = this.quantityOfProduct;
-    product.price = this.quantityOfProduct * product.price;
     this.localStorageService.addToCart(product);
     this.productsCart = [...this.localStorageService.getCartProducts()]  
+    this.localStorageService.getTotalCartPrice();  
   }
 }
 

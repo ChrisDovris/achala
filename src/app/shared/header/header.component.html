@@ -38,7 +38,7 @@
                                 {{product.type}}
                             </div>
                             <div class="price">
-                                {{product.price}} €
+                                 {{product.quantity * product.price}}
                             </div>
                             <div class="quantity">
                                 <p-inputNumber 
@@ -66,7 +66,9 @@
                             <span >
                                 CHECKOUT 
                             </span>
-                            <input type="text" [ngModel]="totalCartPrice">
+                            <span>
+                                {{totalCartPrice | currency}}
+                            </span>
                             <button (click)="onDeleteCart()">
                                 Clear Cart
                             </button>

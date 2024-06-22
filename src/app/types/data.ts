@@ -14,5 +14,5 @@ export type Product = {
     rating?: number[],
     salesCount?: number,
     averageRating: number,
-    quantity?: number
+    quantity: number
 }

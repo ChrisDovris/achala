@@ -33,13 +33,15 @@ export class HeaderComponent implements OnInit {
   items: MegaMenuItem[] | undefined;
   value: string | undefined;
   logo: MegaMenuItem[] | undefined;
-  sidebarVisible: boolean = false
+  sidebarVisible: boolean = false;
   productsInCart: Product[] = this.localStorageService.products;
-  quantityOfProduct: number = 0
-  totalCartPrice: number = 0
+  totalCartPrice: number = 0;
+  //otan anoigei to cart den fainetai to totalPrice ektos an ksanapathsw panw
 
 
    ngOnInit(): void {
+
+    
 
 this.logo = [
   {
@@ -82,21 +84,26 @@ this.logo = [
         ],
         expanded: false
       },
-     ]
-
-     
+     ] ;
+     this.loadProductsInCart();
    }
+
+   
+   
    loadProductsInCart() {
     this.localStorageService.loadCart();
     this.productsInCart = this.localStorageService.getCartProducts();
+    this.updateTotalCartPrice();
   }
 
    onDisplayProductsCart() {
     this.localStorageService.getCartProducts();
+    this.loadProductsInCart();
    }
 
    onRemoveProduct(product: Product) {
-    this.localStorageService.removeProduct(product)
+    this.localStorageService.removeProduct(product);
+    this.onDisplayProductsCart();
    }
 
    onDeleteCart(){
@@ -104,5 +111,8 @@ this.logo = [
     this.loadProductsInCart();
    }
 
+   updateTotalCartPrice() {
+    this.totalCartPrice = this.localStorageService.getTotalCartPrice();
+  }
    
 }
