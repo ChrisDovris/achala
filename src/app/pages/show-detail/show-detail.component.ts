@@ -31,7 +31,7 @@ showProduct$ : Observable<Product | null> | null = null;
 productId: number = 0;
 averageRating: number = 0;
 quantityOfProduct = 1;
-productsCart: any[] = [];
+productsCart: Product[] = [];
 
 topRated = this.productsService.getMostRatedProducts(5)
 
@@ -59,10 +59,9 @@ calculateAverageRating(ratings: number[]): number {
 
 addToCart(product: Product) { 
   if(!this.localStorageService.productInCart(product)) {
-    product.quantity = this.quantityOfProduct;
+    product.quantityOnCart = this.quantityOfProduct;
     this.localStorageService.addToCart(product);
     this.productsCart = [...this.localStorageService.getCartProducts()]  
-    this.localStorageService.getTotalCartPrice();  
   }
 }
 

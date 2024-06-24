@@ -19,8 +19,9 @@
             <span 
                 class="pi pi-shopping-bag" 
                 (click)="sidebarVisible = true" 
-                pBadge [value]=productsInCart.length></span>
-            <p-sidebar [(visible)]="sidebarVisible" position="right" (click)="onDisplayProductsCart()">
+                pBadge [value]=productsInCart.length
+                (click)="onDisplayProductsCart()"></span>
+            <p-sidebar [(visible)]="sidebarVisible" position="right" >
                 <h2>Cart</h2>
                 <hr>
                 <div class="sidebarContainer">
@@ -38,11 +39,11 @@
                                 {{product.type}}
                             </div>
                             <div class="price">
-                                 {{product.quantity * product.price}}
+                                 {{product.quantityOnCart * product.price}}
                             </div>
                             <div class="quantity">
                                 <p-inputNumber 
-                                [(ngModel)]="product.quantity" 
+                                [(ngModel)]="product.quantityOnCart" 
                                 [showButtons]="true"
                                 min=1
                                 max=10
@@ -54,26 +55,27 @@
                                 incrementButtonIcon="pi pi-plus" 
                                 decrementButtonIcon="pi pi-minus"
                                 maxlength=2
+                                (click)="getTotalPrice()"
                                 />
                             </div>
                             <div class="clearProduct">
                                 <span class="pi pi-trash" (click)="onRemoveProduct(product)"></span>
                             </div>
                         </div>
-                    </div>
                     <div class="bottomContainer">
                         <ng-container *ngIf="productsInCart.length">
                             <span >
                                 CHECKOUT 
                             </span>
                             <span>
-                                {{totalCartPrice | currency}}
+                                {{totalCartPrice}}
                             </span>
                             <button (click)="onDeleteCart()">
                                 Clear Cart
                             </button>
                         </ng-container>
                     </div>
+                </div>
                 </div>  
             </p-sidebar>
         </div>

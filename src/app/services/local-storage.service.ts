@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Product } from '../types/data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
 
-  products : any[] = [];
+  products : Product[] = [];
 
   constructor() { }
 
@@ -16,43 +17,34 @@ export class LocalStorageService {
 
   saveCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.products))
-    this.getTotalCartPrice();
   }
 
 
-  addToCart(addedProduct: any) {
+  addToCart(addedProduct: Product) {
     this.products.push(addedProduct);
-    this.getTotalCartPrice();
     this.saveCart();
   }
 
   loadCart() {
     this.products = JSON.parse(localStorage.getItem('cartItems') as any) || [];
-    this.getTotalCartPrice();
   }
 
-  productInCart(product: any) {
+  productInCart(product: Product) {
     return this.products.findIndex((x: any) => x.id === product.id) > -1 ;
-    this.getTotalCartPrice();
   }
 
-  removeProduct(product: any ) {
+  removeProduct(product: Product ) {
     const index = this.products.findIndex((x: any) => x.id === product.id )
     if(index > -1){
       this.products.splice(index, 1)
       this.saveCart();
-      this.getTotalCartPrice();
     }
   } 
 
   clearProducts() {
-    localStorage.clear();
     this.products = [];
+    this.saveCart();
+    
   }
 
-  getTotalCartPrice() {  
-    return this.products.reduce((total, product) => total + product.price * product.quantity, 0);
-  }
-
-  
 }

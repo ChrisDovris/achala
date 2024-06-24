@@ -34,9 +34,8 @@ export class HeaderComponent implements OnInit {
   value: string | undefined;
   logo: MegaMenuItem[] | undefined;
   sidebarVisible: boolean = false;
-  productsInCart: Product[] = this.localStorageService.products;
+  productsInCart: Product[] =  [];
   totalCartPrice: number = 0;
-  //otan anoigei to cart den fainetai to totalPrice ektos an ksanapathsw panw
 
 
    ngOnInit(): void {
@@ -55,7 +54,7 @@ this.logo = [
         label: 'BODY',
         items: [
           [ { items:[
-            {label: 'DEODORANT', routerLink:'/show-list/body/deodorant',visible:true}, 
+            {label: 'DEODORANT', routerLink:'/show-list/body/deodorant'}, 
             {label: 'BODY OIL', routerLink:'/show-list/body/body-oil'}] } ]
         ],
         expanded: true
@@ -85,20 +84,19 @@ this.logo = [
         expanded: false
       },
      ] ;
-     this.loadProductsInCart();
+
+     this.onDisplayProductsCart();
+     
    }
 
-   
-   
-   loadProductsInCart() {
-    this.localStorageService.loadCart();
-    this.productsInCart = this.localStorageService.getCartProducts();
-    this.updateTotalCartPrice();
+   getTotalPrice() {
+    this.totalCartPrice = this.productsInCart.reduce((total, product) => total + product.price * product.quantityOnCart, 0);
+    
   }
-
+   
    onDisplayProductsCart() {
-    this.localStorageService.getCartProducts();
-    this.loadProductsInCart();
+    this.productsInCart = this.localStorageService.getCartProducts();
+    this.getTotalPrice();
    }
 
    onRemoveProduct(product: Product) {
@@ -108,11 +106,9 @@ this.logo = [
 
    onDeleteCart(){
     this.localStorageService.clearProducts();
-    this.loadProductsInCart();
+    this.onDisplayProductsCart();
    }
 
-   updateTotalCartPrice() {
-    this.totalCartPrice = this.localStorageService.getTotalCartPrice();
-  }
+  
    
 }
