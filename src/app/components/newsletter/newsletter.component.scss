@@ -1,0 +1,79 @@
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        text-align: center;
+    }
+    .confirm {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        font-size: 0.8rem;
+        .checkbox {
+            margin: 0 0.5rem;
+        }
+        p {
+            color: #494a4c;
+        }
+    }
+
+}
+
+::ng-deep {
+    .p-checkbox-label-focus {
+        border: none;
+        transition: none;
+    }
+    .p-checkbox:hover {
+        transition: none;
+    }
+     .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+        box-shadow: none;
+      }
+
+    .p-checkbox .p-checkbox-box {
+        border: 2px solid rgb(61, 60, 60);
+        color: #494a4c;
+        border-radius: 3px;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        outline-color: transparent;
+    }
+    .p-checkbox-icon {
+        background-color: #494a4c;
+    }
+
+    .p-checkbox .p-checkbox-box.p-highlight {
+        background-color: #494a4c;
+    }
+
+    .p-inputtext {
+        border: none;
+    }
+
+    .p-button{
+        border: none;
+        background-color: white;
+        color: #494a4c;
+    }
+
+    .p-inputtext:enabled:focus {
+        box-shadow: none;
+    }
+    .email-input {
+        border:1px solid #494a4c;
+    }
+    .email-input:hover {
+        border-color: black;
+    }
+
+    .email-input.invalid {
+        border: 1px solid red;
+      }
+
+    
+   
+}

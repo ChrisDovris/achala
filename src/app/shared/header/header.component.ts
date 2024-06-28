@@ -1,5 +1,5 @@
 import {  CommonModule, DatePipe } from '@angular/common';
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MegaMenuItem } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
@@ -9,7 +9,6 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { ProductsService } from '../../services/products.service';
-import { Observable } from 'rxjs';
 import { Product } from '../../types/data';
 import { InputNumberModule } from 'primeng/inputnumber';
 

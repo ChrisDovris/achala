@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>JOIN THE JOURNEY</h1>
+    <p>Sign up for our updates & get 15% off your first order and be the first to know about new launches, events and product demos.</p>
+     <div class="email-input" [ngClass]="{'invalid': emailControl.invalid && emailControl.touched}">
+        <input type="email"
+         pInputText 
+         placeholder="Email" 
+         ngModel email 
+         [(ngModel)]="email" name="email" #emailControl="ngModel" required/>
+        <p-button icon="pi pi-arrow-right"/>
+    </div>
+    <div class="confirm">
+        <p-checkbox 
+        class="checkbox"
+        [(ngModel)]="checked" 
+        [binary]="true" 
+        inputId="binary" />
+        <p>I agree to receive emails from Achala Natular Products</p>
+    </div>
+</div>

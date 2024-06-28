@@ -66,12 +66,19 @@
         height: 1rem;
       }
       .p-checkbox .p-checkbox-box {
-    border: 2px solid rgb(71, 71, 71);
-    color: #495057;
-    border-radius: 3px;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    outline-color: transparent;
-}
+        border: 2px solid rgb(61, 60, 60);
+        color: #494a4c;
+        border-radius: 3px;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        outline-color: transparent;
+    }
+    .p-checkbox-icon {
+        background-color: #494a4c;
+    }
+
+    .p-checkbox .p-checkbox-box.p-highlight {
+        background-color: #494a4c;
+    }
 
 
    
