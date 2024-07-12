@@ -86,6 +86,17 @@ getProductById(id: number): Observable<Product | null> {
   );
 }
 
+searchProducts(query: string): Observable<Product[]> {
+  return this.http.get<Data>('assets/seeds/seed.json').pipe(
+    map(data => data.products),
+    map(products => products.filter(product =>
+      product.type.toLowerCase().includes(query.toLowerCase()) ||
+      (product.generalType && product.generalType.toLowerCase().includes(query.toLowerCase())) ||
+      (product.attributes && product.attributes.some(attr => attr.toLowerCase().includes(query.toLowerCase())))
+    ))
+  );
+}
+
 
 
 }

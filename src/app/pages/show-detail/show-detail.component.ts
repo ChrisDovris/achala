@@ -12,11 +12,12 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { SupportBannerComponent } from '../../components/support-banner/support-banner.component';
 import { LocalStorageService } from '../../services/local-storage.service';
+import { NewsletterComponent } from '../../components/newsletter/newsletter.component';
 
 @Component({
   selector: 'app-show-detail',
   standalone: true,
-  imports: [CommonModule,ImageModule, RatingModule, FormsModule, InputNumberModule, FieldsetModule, BannerComponent,SupportBannerComponent ],
+  imports: [CommonModule,ImageModule, RatingModule, FormsModule, InputNumberModule, FieldsetModule, BannerComponent,SupportBannerComponent, NewsletterComponent ],
   templateUrl: './show-detail.component.html',
   styleUrl: './show-detail.component.scss'
 })

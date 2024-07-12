@@ -1,6 +1,6 @@
 import {  CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MegaMenuItem } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { MegaMenuModule } from 'primeng/megamenu';
@@ -11,13 +11,14 @@ import { LocalStorageService } from '../../services/local-storage.service';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../types/data';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { debounce, debounceTime, forkJoin, from, of, switchMap } from 'rxjs';
 
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [DatePipe, InputTextModule,FormsModule, MegaMenuModule ,BadgeModule ,SidebarModule, ButtonModule, CommonModule, InputNumberModule],
+  imports: [DatePipe, InputTextModule,FormsModule, MegaMenuModule ,BadgeModule ,SidebarModule, ButtonModule, CommonModule, InputNumberModule, ReactiveFormsModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -30,15 +31,27 @@ export class HeaderComponent implements OnInit {
   }
 
   items: MegaMenuItem[] | undefined;
-  value: string | undefined;
+  valueOfSearch = new FormControl();
   logo: MegaMenuItem[] | undefined;
-  sidebarVisible: boolean = false;
+  sidebarCartVisible: boolean = false;
+  sidebarSearchVisible: boolean = false;
   productsInCart: Product[] =  [];
   totalCartPrice: number = 0;
+  products: Product [] | null = null;
 
 
    ngOnInit(): void {
 
+    this.valueOfSearch.valueChanges.pipe(
+      debounceTime(300),
+      switchMap(value => this.fetchProducts(value))
+    ).subscribe(
+      products => this.products = products,
+      error => {
+        console.error('Error fetching products:', error);
+        this.products = [];
+      },
+    )
     
 
 this.logo = [
@@ -108,6 +121,12 @@ this.logo = [
     this.onDisplayProductsCart();
    }
 
+   fetchProducts(query: string) {
+    if(!query) {
+      return of([]);
+    }
+    return this.productsService.searchProducts(query);
+  }
   
    
 }

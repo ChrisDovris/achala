@@ -9,8 +9,28 @@
         </div>
     <div class="icons">
         <div class="searchBar">
-                <input type="text" [(ngModel)]="value" />
-                <span class="pi pi-search"></span>
+                <span class="pi pi-search" 
+                (click)="sidebarSearchVisible = true"
+                ></span>
+                <p-sidebar [(visible)]="sidebarSearchVisible" position="right">
+                    <ng-template pTemplate="header">
+                        <input type="text" pInputText [formControl]="valueOfSearch" placeholder="Search anything">
+                    </ng-template>
+                    
+                    <hr>
+                    <div *ngIf="products && products.length > 0">
+                        <div *ngFor="let product of products">
+                            <a [routerLink]="'/show-detail/' + product.id">
+                                <img src="{{product.imagePath}}" alt="">
+                                <div class="details">
+                                    <p> {{product.title}}</p>
+                                    <p> {{product.generalType | uppercase}} - {{product.type | uppercase}} </p>
+                                    <p> {{product.price}} €</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </p-sidebar>
         </div>
         <div class="account">
             <span class="pi pi-user"></span>
@@ -18,11 +38,13 @@
         <div class="cart">
             <span 
                 class="pi pi-shopping-bag" 
-                (click)="sidebarVisible = true" 
+                (click)="sidebarCartVisible = true" 
                 pBadge [value]=productsInCart.length
                 (click)="onDisplayProductsCart()"></span>
-            <p-sidebar [(visible)]="sidebarVisible" position="right" >
-                <h2>Cart</h2>
+            <p-sidebar [(visible)]="sidebarCartVisible" position="right" >
+                <ng-template pTemplate="header">
+                    <h2>Cart</h2>
+                </ng-template>
                 <hr>
                 <div class="sidebarContainer">
                     <ng-container *ngIf="!productsInCart.length"> 
